@@ -1,0 +1,61 @@
+body {
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 120px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+header img {
+    width: 175px;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 3.5em;
+    line-height: 0.8;
+}
+
+h1 span {
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+}
+
+h3 {
+    font-family: 'Outfit', sans-serif;
+    color: #C2128D;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+#testo {
+    font-size: medium;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#ulContainer {
+    line-height: 1.75;
+    padding-left: 22px;
+}
+
+form {
+    font-size: medium;
+    font-weight: bold;
+}
+
+/*-------------------------------*/
+
+#checkbox {
+    background-color: none;
+    accent-color: #C2128D;
+}
+
+
+
