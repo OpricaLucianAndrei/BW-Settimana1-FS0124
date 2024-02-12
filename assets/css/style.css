@@ -1,0 +1,13 @@
+body {
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 120px;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
+}
+
+header img {
+    width: 250px;
+}
+
