@@ -1,3 +1,286 @@
+
+body {
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 120px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+header img {
+    width: 175px;
+}
+
+section {
+    width: 40%;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 3.5em;
+    line-height: 0.8;
+}
+
+h1 span {
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+}
+
+h3 {
+    font-family: 'Outfit', sans-serif;
+    color: #C2128D;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+#testo {
+    font-size: medium;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#ulContainer {
+    line-height: 1.75;
+    padding-left: 22px;
+}
+
+form {
+    width: 60%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+/*-------------------------------*/
+
+#checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    vertical-align: bottom;
+    accent-color: #C2128D;
+}
+
+#checkboxContainer,
+#buttonContainer {
+    display: inline-block;
+}
+
+#buttonContainer {
+    text-align: right;
+    padding-left: 50px;
+}
+
+#btnAdd {
+    text-align: center;
+    width: 200px;
+    height: 50px
+}
+
+.btnEnabled {
+    cursor: pointer;
+    background-color: #00ffff;
+    box-shadow: 2px 2px 15px 5px #00FFFF, -2px -2px 15px 5px #00FFFF;
+    border: 1px solid #00FFFF;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/*-------BENCHMARK-------------*/
+
+#mainBenchmark{
+    text-align: center;
+    padding: 50px 0;
+    margin-bottom: 45px; 
+}
+
+
+
+#idTextQuestions {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#textBenchmark {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+    
+}
+
+.domanda {
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 39%;
+    height: 70px;
+    margin: 10px 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.domanda label, .html {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+
+#btnBenchmark {
+    background-color: transparent;
+    color: white;
+    width: 200px;
+    height: 60px;   
+}
+
+
+
+footer {
+    text-align: center;      
+}
+
+footer p {
+    font-size: medium;
+    font-family: 'Outfit', sans-serif;
+}
+
+#footerColor {
+    color: #C2128D;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------*/
+/*RESULTS*/
+
+#mainResults {
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+
+}
+
+#mainResults h1 {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+
+#resultsSection {
+    width: 100%;
+}
+
+#correctAnswers, #graph, #wrongAnswers {
+    display: inline-block;
+    margin: 0 auto;
+    width: 30%;
+}
+
+
+#correctAnswers h2, #wrongAnswers h2 {
+    font-weight: 400;
+    font-size: 2em;
+}
+
+#btnRate {
+    background-color: transparent;
+    color: white;
+    width: 200px;
+    height: 60px;
+    border: 2px solid;
+    box-shadow: 1px 1px 15px 5px #3f2570, -1px -1px 15px 5px #3f2570;
+
+}
+
+/* AGGIUNTA DEL CSS A PAGINA 4 RELATIVA AI FEEDBACK!!!  */
+
+#mainFeedback {
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    width: auto;
+    padding-top: 1.5px;
+}
+
+#mainFeedback p {
+    line-height: 1.4;
+    font-size: 1.2em;
+}
+
+#mainFeedback h2 {
+    font-size: 2em;
+}
+
+.star {
+    text-align: left;
+    font-size: 50px;
+    color: #0B113B;
+                            /* color: #03ffff; COLORE DA UTILIZZARE QUANDO PASSI IL CURSORE SULLE star IN JS 
+                                                transition: color 0.3s ease; */
+}
+
+#comment {
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    font-size: 1.2rem;
+    padding: 13px 30px;
+    width: 730px;
+    color: white;
+    border-bottom: 2px solid #c2138e;
+}
+
+#buttonContainerFeedback {
+    margin-top: 10px;
+    padding: 15px;
+    display: inline-block;
+}
+
+/* INSERIRE BTN IN JS RICHIAMANDO L'ID btnFeedback */
+#btnFeedback {  
+    width: 220px;
+    height: 67px;
+    margin-top: 30px;
+}
+
+/* CHIUSURA CSS PAGINA 4  */
+
+
+
+
+
+
+
+#thanksgiving {
+    text-align: center;
+    color: #00ffff;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+
+=======
 body {
     background-image: url('../img/bg.jpg');
     background-repeat: no-repeat;
@@ -140,5 +423,6 @@ form {
     left: 0;
     right: 0;
     transform: translateY(-50%);
+
 
 }
