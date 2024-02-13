@@ -90,6 +90,30 @@ form {
     font-size: 1.3em;
 }
 
+/*-------BENCHMARK-------------*/
+
+#mainBenchmark{
+    text-align: center;
+    padding: 50px 0;
+}
+
+
+
+#idTextQuestions {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#textBenchmark {
+    display: inline-block;
+}
+
+#textBenchmark .domanda {
+    
+}
 
 /*-------------------------------*/
 /*RESULTS*/
