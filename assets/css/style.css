@@ -91,10 +91,47 @@ form {
 }
 
 
+/*-------------------------------*/
+/*RESULTS*/
+
+#mainResults {
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+
+}
+
+#mainResults h1 {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
 
 
+#resultsSection {
+    width: 100%;
+}
+
+#correctAnswers, #graph, #wrongAnswers {
+    display: inline-block;
+    margin: 0 auto;
+    width: 30%;
+}
 
 
+#correctAnswers h2, #wrongAnswers h2 {
+    font-weight: 400;
+    font-size: 2em;
+}
+
+#btnRate {
+    background-color: transparent;
+    color: white;
+    width: 200px;
+    height: 60px;
+    border: 2px solid;
+    box-shadow: 1px 1px 15px 5px #3f2570, -1px -1px 15px 5px #3f2570;
+
+}
 
 
 

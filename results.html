@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,33 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
     <header>
         <img src="assets/img/epicode_logo.png" alt="logo di epicode" />
     </header>
 
+
+    <main id="mainResults">
+        <h1>Results</h1>
+        <p>The summary of your answers:</p>
+
+        <section id="resultsSection">
+            <div id="correctAnswers">
+                <h2>Correct</h2>
+            </div>
+
+            <div id="graph">
+
+            </div>
+
+            <div id="wrongAnswers">
+                <h2>Wrong</h2>
+            </div>
+        </section>
+        <a href="feedback.html"><button type="button" id="btnRate">RATE US</button> </a>
+    </main>
     <script src="assets/js/results.js"></script>
 </body>
+
 </html>
