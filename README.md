@@ -3,7 +3,7 @@
 ## Welcome Page
 Nella welcome page è stato impostato un form con una checkbox che ha come requisito essenziale 
 la spunta per poter procedere alla pagina successiva (ovvero la Benchmark Page), usando questa funzione:
-`function btnStart() {
+```function btnStart() {
   btnAdd.disabled = true;
   checkbox.addEventListener('click', function () {
     if (checkbox.checked) {
@@ -15,5 +15,5 @@ la spunta per poter procedere alla pagina successiva (ovvero la Benchmark Page),
     }
 
   })
-}`
+}```
 
