@@ -1,3 +1,4 @@
+
 body {
     background-image: url('../img/bg.jpg');
     background-repeat: no-repeat;
@@ -269,6 +270,123 @@ footer p {
 
 
 
+#thanksgiving {
+    text-align: center;
+    color: #00ffff;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+
+=======
+body {
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 120px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+header img {
+    width: 175px;
+}
+
+section {
+    width: 40%;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 3.5em;
+    line-height: 0.8;
+}
+
+h1 span {
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+}
+
+h3 {
+    font-family: 'Outfit', sans-serif;
+    color: #C2128D;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+#testo {
+    font-size: medium;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#ulContainer {
+    line-height: 1.75;
+    padding-left: 22px;
+}
+
+form {
+    width: 60%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+/*-------------------------------*/
+
+#checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    vertical-align: bottom;
+    accent-color: #C2128D;
+}
+
+#checkboxContainer,
+#buttonContainer {
+    display: inline-block;
+}
+
+#buttonContainer {
+    text-align: right;
+    padding-left: 50px;
+}
+
+#btnAdd {
+    text-align: center;
+    width: 200px;
+    height: 50px
+}
+
+.btnEnabled {
+    cursor: pointer;
+    background-color: #00ffff;
+    box-shadow: 2px 2px 15px 5px #00FFFF, -2px -2px 15px 5px #00FFFF;
+    border: 1px solid #00FFFF;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -305,5 +423,6 @@ footer p {
     left: 0;
     right: 0;
     transform: translateY(-50%);
+
 
 }
