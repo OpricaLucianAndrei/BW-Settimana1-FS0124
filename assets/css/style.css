@@ -95,6 +95,7 @@ form {
 #mainBenchmark{
     text-align: center;
     padding: 50px 0;
+    margin-bottom: 45px; 
 }
 
 
@@ -108,8 +109,55 @@ form {
 }
 
 #textBenchmark {
-    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+    
 }
+
+.domanda {
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 450px;
+    height: 70px;
+    margin: 10px 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.domanda label, .html {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+
+#btnBenchmark {
+    background-color: transparent;
+    color: white;
+    width: 200px;
+    height: 60px;   
+}
+
+
+
+footer {
+    text-align: center;      
+}
+
+footer p {
+    font-size: medium;
+    font-family: 'Outfit', sans-serif;
+}
+
+#footerColor {
+    color: #C2128D;
+}
+
+
 
 
 
