@@ -27,17 +27,24 @@
         <section id="resultsSection">
             <div id="correctAnswers">
                 <h2>Correct</h2>
+                <p id="correctPercentage">60% </p>
+                <p><span></span> /6 questions </p>
+
             </div>
 
             <div id="graph">
-
+                <canvas id="myChart"></canvas>
             </div>
 
             <div id="wrongAnswers">
                 <h2>Wrong</h2>
+                <p id="wrongPercentage">40% </p>
+                <p><span></span> /6 questions </p>
             </div>
         </section>
         <a href="feedback.html"><button type="button" id="btnRate">RATE US</button> </a>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/js/results.js"></script>
+
 </body>

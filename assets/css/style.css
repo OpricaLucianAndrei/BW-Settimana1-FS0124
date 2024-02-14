@@ -192,13 +192,21 @@ footer p {
 #correctAnswers, #graph, #wrongAnswers {
     display: inline-block;
     margin: 0 auto;
-    width: 30%;
+    width: 30%; 
 }
 
+#graph {
+    margin: 15px auto;
+  }
 
 #correctAnswers h2, #wrongAnswers h2 {
     font-weight: 400;
     font-size: 2em;
+}
+
+#correctPercentage, #wrongPercentage {
+    font-size: 6em;
+    font-weight: bold;
 }
 
 #btnRate {
@@ -210,7 +218,8 @@ footer p {
     box-shadow: 1px 1px 15px 5px #3f2570, -1px -1px 15px 5px #3f2570;
 
 }
-
+ 
+ 
 /* AGGIUNTA DEL CSS A PAGINA 4 RELATIVA AI FEEDBACK!!!  */
 
 #mainFeedback {
@@ -231,11 +240,17 @@ footer p {
 
 .star {
     text-align: left;
-    font-size: 50px;
+    font-size: 60px;
     color: #0B113B;
                             /* color: #03ffff; COLORE DA UTILIZZARE QUANDO PASSI IL CURSORE SULLE star IN JS 
                                                 transition: color 0.3s ease; */
 }
+
+.star.active,
+.star:hover {
+  color: #00ffff;
+}
+
 
 #comment {
     background-color: transparent;
