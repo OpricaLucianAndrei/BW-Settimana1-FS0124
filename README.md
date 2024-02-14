@@ -29,6 +29,34 @@ function btnStart() {
 
 ## Feedback Page
 
-# BW-Settimana1-FS0124
-Buildweek gruppo 7
+Nella feedback Page troviamo un interfaccia che fa scegliere una valutazione del test selezionando un numero di stelle con due funzionalità ciascuna facente riferimento ad un evento specifico, il passaggio sopra le stelle ed il click su di esse. 
 
+
+```
+ star.addEventListener('mouseover', () => {
+        highlightStars(index);
+    });
+
+    star.addEventListener('click', () => {
+        selectStar(index);
+    });
+```   
+
+
+Inoltre c'è un input di testo con requisito essenziale l'inserimento di almeno un carattere
+
+
+```
+<input type="text" id="comment" placeholder="Write your comment here" required>
+``` 
+
+
+ per poter attivare il pulsante gestito esattamente come nella pagina di Welcome solo con il cambio della condizione del **IF**:
+
+
+```
+if (text.value.trim() !== '')
+```
+
+
+Questo button porta alla pagina di ringraziamento è verificato invio

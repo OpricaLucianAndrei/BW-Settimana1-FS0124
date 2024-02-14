@@ -8,7 +8,8 @@ stars.forEach((star, index) => {
     });
 
     star.addEventListener('click', () => {
-        selectStar(index);
+        highlightStars(index);
+        //selectStar(index);
     });
 });
 
@@ -22,15 +23,15 @@ function highlightStars(index) {
     });
 }
 
-function selectStar(index) {
-    stars.forEach((star, i) => {
-        if (i <= index) {
-            star.classList.add('active');
-        } else {
-            star.classList.remove('active');
-        }
-    });
-}
+//function selectStar(index) {
+//    stars.forEach((star, i) => {
+//        if (i <= index) {
+//            star.classList.add('active');
+//        } else {
+//            star.classList.remove('active');
+//        }
+//    });
+//}
 
 window.addEventListener("load", init());
 
