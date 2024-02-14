@@ -93,67 +93,56 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-const exstractTextQuestionH2 = document.getElementById("idTextQuestions");
-const textBenchmark = document.getElementById("textBenchmark");
-window.addEventListener("load", init());
-function init() {
-  views();
-  //eventBtn();
-  // timer();
-}
 
-function exstractQuestion(i) {
+let timer;
+const risposteDate = [];
+let bool= true;
+
+window.addEventListener("load", function () {
+  domandaEstratta(0);
+  rispostaEstratta(0);
+  tempo();
+
+})
+
+function domandaEstratta(i) {
   const h2Question = document.getElementById("idTextQuestions");
   h2Question.innerHTML = `<h2>${questions[i].question}</h2>`;
 }
 
-function exstract(index) {
+function rispostaEstratta(index) {
+  textBenchmark.innerHTML = '';
   let answer = [];
-   answer= questions[index].incorrect_answers;
-   const ran=Math.floor(Math.random()*(questions[index].incorrect_answers.length+1));
-   answer.splice(ran,0,questions[index].correct_answer);
-  //  console.log(answer);
+  answer = questions[index].incorrect_answers;
+  const ran = Math.floor(Math.random() * (questions[index].incorrect_answers.length + 1));
+  answer.splice(ran, 0, questions[index].correct_answer);
   answer.forEach(element => {
-  const divQuestion = document.createElement("div");
-  const inputQuestion = document.createElement("input");
-  const labelQuestion = document.createElement("label");
-  divQuestion.setAttribute("class", "domanda");
-  inputQuestion.setAttribute("type", "radio");
-  inputQuestion.setAttribute('value',element);
-  inputQuestion.setAttribute('id',element);
-  labelQuestion.setAttribute('for',element);
-  labelQuestion.innerText=element;
-  divQuestion.appendChild(inputQuestion);
-  divQuestion.appendChild(labelQuestion);
-  textBenchmark.appendChild(divQuestion);
-});
-
+    textBenchmark.innerHTML += `<div class='domanda'>
+      <input type='radio' value='${element}' name='family' id='${element}'></input>
+        <label for='${element}'>${element}</label></div>`;
+  });
+  // textBenchmark.innerHTML += `<button type="button" id="btnBenchmark">PROCEED</button>`;
 }
 
-/* visualizza domanda e testo */
-function views() {
+function tempo() {
   let i = 0;
-  if (i === 0) {
-    exstractQuestion(i);
-    exstract(i);
-  }
-  i++;
-  const timer = setInterval(function() {
-    const allQuestions = document.querySelectorAll(".domanda");
-    allQuestions.forEach(element=> {
-      element.remove();
-    });
-    exstractQuestion(i);
-    exstract(i);
-
+  timer = setInterval(function () {
     i++;
-  }, 1000);
-}
+    if (!bool) {
+      risposteDate.push(false);
+    }
+    if  (i < questions.length) {
+      // console.log(question);
 
-function eventBtn() {
-  // const btnBenchmark=document.getElementById('btnBenchmark');
-  //     btnBenchmark.addEventListener('click',function(e){
-  //         e.preventDefault();
-  //         console.log(document.forms.textBenchmark.fav_language.value);
-  //     })
+      domandaEstratta(i);
+      rispostaEstratta(i);
+    }else {
+      clearInterval(timer);
+      timer=null;
+      console.log("ciao");
+    }
+    if (setInterval = 0) {
+      
+    }
+  }, 5000);
 }
