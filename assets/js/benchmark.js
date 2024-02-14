@@ -112,8 +112,7 @@ function exstract(index) {
    answer= questions[index].incorrect_answers;
    const ran=Math.floor(Math.random()*(questions[index].incorrect_answers.length+1));
    answer.splice(ran,0,questions[index].correct_answer);
-   console.log(answer);
-  
+  //  console.log(answer);
   answer.forEach(element => {
   const divQuestion = document.createElement("div");
   const inputQuestion = document.createElement("input");
@@ -133,18 +132,22 @@ function exstract(index) {
 
 /* visualizza domanda e testo */
 function views() {
-  let i=0;
-  if (i===0) {
-   exstractQuestion(i);
-   exstract(i);
+  let i = 0;
+  if (i === 0) {
+    exstractQuestion(i);
+    exstract(i);
   }
   i++;
-  
-    const timer = setInterval(function () {
-      exstractQuestion(i);
-      exstract(i);
-      i++
-    }, 1000);
+  const timer = setInterval(function() {
+    const allQuestions = document.querySelectorAll(".domanda");
+    allQuestions.forEach(element=> {
+      element.remove();
+    });
+    exstractQuestion(i);
+    exstract(i);
+
+    i++;
+  }, 1000);
 }
 
 function eventBtn() {
