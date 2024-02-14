@@ -1,3 +1,5 @@
+const risultati = localStorage.getItem('risposte');
+
 //let ctx = document.getElementById("myChart").getContext('2d');
 //const myChart = new Chart(ctx, {
 //  type: 'doughnut',

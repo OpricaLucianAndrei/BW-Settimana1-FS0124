@@ -146,3 +146,35 @@ function tempo() {
     }
   }, 5000);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//localStorage.setItem('risposte', arrayRisposte);
