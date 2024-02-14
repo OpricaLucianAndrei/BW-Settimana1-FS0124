@@ -101,6 +101,7 @@ let bool= true;
 window.addEventListener("load", function () {
   domandaEstratta(0);
   rispostaEstratta(0);
+  par();
   tempo();
 
 })
@@ -121,11 +122,23 @@ function rispostaEstratta(index) {
       <input type='radio' value='${element}' name='family' id='${element}'></input>
         <label for='${element}'>${element}</label></div>`;
   });
-  // textBenchmark.innerHTML += `<button type="button" id="btnBenchmark">PROCEED</button>`;
+  // textBenchmark.innerHTML += <button type="button" id="btnBenchmark">PROCEED</button>;
+}
+function par() {
+
+  const radioButtons = document.querySelectorAll('input[name="family"]');
+  for(const radioButton of radioButtons){
+    radioButton.addEventListener('change', function(){
+      console.log(radioButton.value);
+      clearInterval(timer)
+      timer=null;
+    });
+  } 
 }
 
 function tempo() {
   let i = 0;
+
   timer = setInterval(function () {
     i++;
     if (!bool) {
@@ -141,40 +154,6 @@ function tempo() {
       timer=null;
       console.log("ciao");
     }
-    if (setInterval = 0) {
-      
-    }
+    par();
   }, 5000);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//localStorage.setItem('risposte', arrayRisposte);
