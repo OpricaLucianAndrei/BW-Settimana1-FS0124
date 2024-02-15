@@ -144,6 +144,11 @@ form {
     margin: 10px 10px;
     display: inline-block;
     position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
 }
 
 .domanda label, .html {
@@ -152,8 +157,8 @@ form {
     left: 0;
     right: 0;
     transform: translateY(-50%);
+    cursor: pointer;
 }
-
 
 #btnBenchmark {
     background-color: transparent;
