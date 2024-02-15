@@ -97,8 +97,6 @@ const questions = [
 let timer;
 const risposteDate = [];
 let bool = true;
-const risposteEsatte = [];
-const risposteErrate = [];
 
 window.addEventListener("load", function inizio() {
   domandaEstratta();
@@ -109,6 +107,7 @@ window.addEventListener("load", function inizio() {
 function domandaEstratta() {
   const h2Question = document.getElementById("idTextQuestions");
   h2Question.innerHTML = `<h2>${questions[risposteDate.length].question}</h2>`;
+  document.getElementById("questionIndex").innerText = risposteDate.length + 1;
 }
 
 function rispostaEstratta() {
@@ -116,7 +115,8 @@ function rispostaEstratta() {
   let answer = [];
   answer = questions[risposteDate.length].incorrect_answers;
   const ran = Math.floor(
-    Math.random() * (questions[risposteDate.length].incorrect_answers + 1)
+    Math.random() *
+      (questions[risposteDate.length].incorrect_answers.length + 1)
   );
   answer.splice(ran, 0, questions[risposteDate.length].correct_answer);
   answer.forEach((element) => {
@@ -124,13 +124,10 @@ function rispostaEstratta() {
       <input type='radio' value='${element}' name='family' id='${element}'></input>
         <label for='${element}'>${element}</label></div>`;
   });
-  //risposteDate.push({ id: risposteDate.length });
-  
 }
 
 function invio(radioButton) {
-  //risposteDate.push(radioButton.value);
-  risposteDate.push({ id: risposteDate.length});
+  risposteDate.push({ id: risposteDate.length });
   risposteDate[risposteDate.length - 1].bool = radioButton;
 }
 
@@ -140,43 +137,57 @@ function eventoRadio() {
     radioButton.addEventListener("change", function () {
       clearInterval(timer);
       timer = null;
-      console.log(risposteDate);
-      if(radioButton.value===questions[risposteDate.length-1].correct_answer){
-        invio(true);
 
-      }else{
+      clearInterval(timerInterval);
+      counter = maxTime;
+      timerInterval = setInterval(() => {
+        counter = counter - 1;
+        updateChart(myChart, counter);
+      }, intervalDuration);
+
+      if (radioButton.value === questions[risposteDate.length].correct_answer) {
+        invio(true);
+      } else {
         invio(false);
-        
       }
-      invio(radioButton.value);
-      console.log('ciao cristo');
-      domandaEstratta();
-      rispostaEstratta();
-      tempo();
+      if (questions.length === risposteDate.length) {
+        fine();
+      } else {
+        domandaEstratta();
+        rispostaEstratta();
+        tempo();
+      }
     });
   }
 }
-
+function fine() {
+  const arr = risposteDate.map((element) => {
+    return element.bool;
+  });
+  localStorage.setItem("risposte", arr);
+  window.location.href = "../../results.html";
+}
 function tempo() {
   eventoRadio();
   timer = setInterval(function () {
     console.log(risposteDate.length);
     //console.log(risposteDate.length +' '+questions.length );
     if (risposteDate.length < questions.length - 1) {
-      console.log(risposteDate);
+
       invio(false);
       domandaEstratta();
       rispostaEstratta();
     } else {
-      console.log(risposteDate+1);
       invio(false);
       clearInterval(timer);
       timer = null;
+      fine();
     }
 
     eventoRadio();
-  }, 10000);
+  }, 30000);
 }
+
 // FUNZIONE PER IL TIMER CHE GIRA IN SENSO ANTI ORARIO
 let myChart;
 let intervalDuration = 1000; // Intervallo di aggiornamento del timer in millisecondi
