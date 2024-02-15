@@ -17,7 +17,15 @@
     <header>
         <img src="assets/img/epicode_logo.png" alt="logo di epicode" />
     </header>
-
+    <div class="c-countdown-wrapper">
+        <canvas id="countdown"></canvas>
+    </div>
+    <div id="testoTimer">
+        <p>SECONDS<br>
+            <span id="counterHtml"></span> <br>
+            REMAINING
+        </p>
+    </div>
     <main id="mainBenchmark">
         <div id="idTextQuestions">
             <!-- <h2>What does CPU stand for?</h2> -->
@@ -28,18 +36,13 @@
                 <input type="radio" value="HTML" for="html" id="html">
                 <label for="html">HTML</label>
             </div> -->
-
-
-            <div id="containerButtonBenchmark">
-                <button type="submit" id="btnBenchmark">PROCEED</button>
-            </div>
         </form>
     </main>
 
     <footer>
         <p>QUESTION&nbsp; <span id="questionIndex"></span>&nbsp;<span id="footerColor">/ 10</span></p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/js/benchmark.js"></script>
 </body>
 

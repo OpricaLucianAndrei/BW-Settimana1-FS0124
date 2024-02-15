@@ -96,64 +96,147 @@ const questions = [
 
 let timer;
 const risposteDate = [];
-let bool= true;
+let bool = true;
+const risposteDate2 = [];
 
-window.addEventListener("load", function () {
-  domandaEstratta(0);
-  rispostaEstratta(0);
-  par();
+window.addEventListener("load", function inizio() {
+  domandaEstratta();
+  rispostaEstratta();
   tempo();
+  eventoRadio();
+});
 
-})
-
-function domandaEstratta(i) {
+function domandaEstratta() {
   const h2Question = document.getElementById("idTextQuestions");
-  h2Question.innerHTML = `<h2>${questions[i].question}</h2>`;
+  h2Question.innerHTML = `<h2>${questions[risposteDate.length].question}</h2>`;
 }
 
-function rispostaEstratta(index) {
-  textBenchmark.innerHTML = '';
+function rispostaEstratta() {
+  textBenchmark.innerHTML = "";
   let answer = [];
-  answer = questions[index].incorrect_answers;
-  const ran = Math.floor(Math.random() * (questions[index].incorrect_answers.length + 1));
-  answer.splice(ran, 0, questions[index].correct_answer);
-  answer.forEach(element => {
+  answer = questions[risposteDate.length].incorrect_answers;
+  const ran = Math.floor(
+    Math.random() * (questions[risposteDate.length].incorrect_answers + 1)
+  );
+  answer.splice(ran, 0, questions[risposteDate.length].correct_answer);
+  answer.forEach((element) => {
     textBenchmark.innerHTML += `<div class='domanda'>
       <input type='radio' value='${element}' name='family' id='${element}'></input>
         <label for='${element}'>${element}</label></div>`;
   });
-  // textBenchmark.innerHTML += <button type="button" id="btnBenchmark">PROCEED</button>;
+  risposteDate.push({id:risposteDate.length });
+  console.log();
 }
-function par() {
 
+function invio(radioButton) {
+  //risposteDate.push(radioButton.value);
+  risposteDate[risposteDate.length-1].bool=radioButton;
+ 
+}
+
+function eventoRadio() {
   const radioButtons = document.querySelectorAll('input[name="family"]');
-  for(const radioButton of radioButtons){
-    radioButton.addEventListener('change', function(){
-      console.log(radioButton.value);
-      clearInterval(timer)
-      timer=null;
+  for (const radioButton of radioButtons) {
+    radioButton.addEventListener("change", function () {
+      
+      clearInterval(timer);
+      timer = null;
+      invio(radioButton.value);
+      domandaEstratta();
+      rispostaEstratta();
+      tempo();
     });
-  } 
+  }
 }
 
 function tempo() {
-  let i = 0;
-
+  eventoRadio();
   timer = setInterval(function () {
-    i++;
-    if (!bool) {
-      risposteDate.push(false);
-    }
-    if  (i < questions.length) {
-      // console.log(question);
-
-      domandaEstratta(i);
-      rispostaEstratta(i);
-    }else {
+    //console.log(risposteDate.length +' '+questions.length );
+    if (risposteDate.length < questions.length - 1) {
+      invio(false);
+      domandaEstratta();
+      rispostaEstratta();
+      
+    } else {
+      invio(false);
       clearInterval(timer);
-      timer=null;
-      console.log("ciao");
+      timer = null;
+      
+     
     }
-    par();
+
+    eventoRadio();
   }, 5000);
+  
 }
+// FUNZIONE PER IL TIMER CHE GIRA IN SENSO ANTI ORARIO
+let myChart;
+let intervalDuration = 1000; // Intervallo di aggiornamento del timer in millisecondi
+let maxTime = 30; // Tempo massimo del timer in secondi
+
+function drawPieChart(value, maxValue) {
+  const ctx = document.getElementById("countdown").getContext("2d");
+  myChart = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      datasets: [
+        {
+          data: [value, maxValue],
+          backgroundColor: ["#00ffff", "grey"],
+        },
+      ],
+    },
+    options: {
+      cutout: 40,
+      tooltips: {
+        enabled: false,
+      },
+      plugins: {
+        datalabels: {
+          backgroundColor: function (context) {
+            return context.dataset.backgroundColor;
+          },
+          display: function (context) {
+            let dataset = context.dataset;
+            let value = dataset.data[context.dataIndex];
+            return value > 0;
+          },
+          color: "white",
+        },
+      },
+    },
+  });
+}
+
+function updateChart(chart, counter) {
+  if (counter <= 0) {
+    // Modifica la condizione per controllare se il contatore è <= 0
+    clearInterval(timerInterval); // Ferma l'intervallo quando il timer raggiunge 0 secondi
+    counter = 30; // Reimposta il contatore a 0
+    timerInterval = setInterval(() => {
+      // Ricomincia l'intervallo
+      counter = counter - 1;
+      updateChart(myChart, counter);
+    }, intervalDuration);
+  }
+  chart.data.datasets[0].data = [maxTime - counter, counter];
+  chart.update();
+  const counterHtml = document.getElementById("counterHtml");
+  counterHtml.innerHTML = counter;
+}
+
+let timerInterval;
+
+const init = () => {
+  drawPieChart(0, maxTime);
+
+  let counter = maxTime; // Inizializza il contatore a maxTime invece di 0
+  timerInterval = setInterval(() => {
+    counter = counter - 1; // Decrementa il contatore invece di incrementarlo
+
+    updateChart(myChart, counter);
+  }, intervalDuration);
+};
+
+init();
