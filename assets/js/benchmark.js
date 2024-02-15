@@ -97,13 +97,13 @@ const questions = [
 let timer;
 const risposteDate = [];
 let bool = true;
-const risposteDate2 = [];
+const risposteEsatte = [];
+const risposteErrate = [];
 
 window.addEventListener("load", function inizio() {
   domandaEstratta();
   rispostaEstratta();
   tempo();
-  eventoRadio();
 });
 
 function domandaEstratta() {
@@ -124,24 +124,32 @@ function rispostaEstratta() {
       <input type='radio' value='${element}' name='family' id='${element}'></input>
         <label for='${element}'>${element}</label></div>`;
   });
-  risposteDate.push({id:risposteDate.length });
-  console.log();
+  //risposteDate.push({ id: risposteDate.length });
+  
 }
 
 function invio(radioButton) {
   //risposteDate.push(radioButton.value);
-  risposteDate[risposteDate.length-1].bool=radioButton;
- 
+  risposteDate.push({ id: risposteDate.length});
+  risposteDate[risposteDate.length - 1].bool = radioButton;
 }
 
 function eventoRadio() {
   const radioButtons = document.querySelectorAll('input[name="family"]');
   for (const radioButton of radioButtons) {
     radioButton.addEventListener("change", function () {
-      
       clearInterval(timer);
       timer = null;
+      console.log(risposteDate);
+      if(radioButton.value===questions[risposteDate.length-1].correct_answer){
+        invio(true);
+
+      }else{
+        invio(false);
+        
+      }
       invio(radioButton.value);
+      console.log('ciao cristo');
       domandaEstratta();
       rispostaEstratta();
       tempo();
@@ -152,23 +160,22 @@ function eventoRadio() {
 function tempo() {
   eventoRadio();
   timer = setInterval(function () {
+    console.log(risposteDate.length);
     //console.log(risposteDate.length +' '+questions.length );
     if (risposteDate.length < questions.length - 1) {
+      console.log(risposteDate);
       invio(false);
       domandaEstratta();
       rispostaEstratta();
-      
     } else {
+      console.log(risposteDate+1);
       invio(false);
       clearInterval(timer);
       timer = null;
-      
-     
     }
 
     eventoRadio();
-  }, 5000);
-  
+  }, 10000);
 }
 // FUNZIONE PER IL TIMER CHE GIRA IN SENSO ANTI ORARIO
 let myChart;
