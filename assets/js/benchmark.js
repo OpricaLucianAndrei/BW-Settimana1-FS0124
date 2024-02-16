@@ -1,9 +1,3 @@
-/* 
-  passo 1= di principio ci basiamo sulla lunghezza del arrey delle risposte, se la risposta non è stata data il programma non può funzionare
-  passo 2= 
-*/
-
-
 const questions = [
   {
     category: "Science: Computers",

@@ -30,6 +30,18 @@ console.log(risultati);
 //  }
 //}
 //);
+
+
+
+window.addEventListener('load', function() {
+    history.pushState(null, document.title, location.href);
+  });
+  
+  window.addEventListener('popstate', function(event) {
+    history.pushState(null, document.title, location.href);
+  });
+  
+
 let percentualeTrue;
 const testoCorretto = `Congratulations!`;
 const testoSbagliato = `Sorry, you didn\'t make it!`;
