@@ -2,6 +2,16 @@ const stars = document.querySelectorAll('.star');
 const btnFeedback = document.getElementById('btnFeedback');
 const text = document.getElementById('comment');
 
+
+
+window.addEventListener('load', function() {
+    history.pushState(null, document.title, location.href);
+  });
+  
+  window.addEventListener('popstate', function(event) {
+    history.pushState(null, document.title, location.href);
+  });
+  
 stars.forEach((star, index) => {
     star.addEventListener('mouseover', () => {
         highlightStars(index);

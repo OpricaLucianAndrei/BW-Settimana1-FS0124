@@ -104,6 +104,17 @@ window.addEventListener("load", function inizio() {
 });
 
 
+
+window.addEventListener('load', function() {
+  history.pushState(null, document.title, location.href);
+});
+
+window.addEventListener('popstate', function(event) {
+  history.pushState(null, document.title, location.href);
+});
+
+
+
 function casuale() {
   const ran = Math.floor( Math.random() * (questions.length));
   let j=true;
