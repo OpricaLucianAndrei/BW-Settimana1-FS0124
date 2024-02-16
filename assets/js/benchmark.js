@@ -97,21 +97,19 @@ const questions = [
 let timer;
 const risposteDate = [];
 
-window.addEventListener("load", function inizio() {
-  domandaEstratta();
-  
-  tempo();
-});
-
-
-
-window.addEventListener('load', function() {
-  history.pushState(null, document.title, location.href);
-});
 
 window.addEventListener('popstate', function(event) {
   history.pushState(null, document.title, location.href);
 });
+
+
+
+window.addEventListener("load", function inizio() {
+  history.pushState(null, document.title, location.href);
+  domandaEstratta();
+  tempo();
+});
+
 
 
 
