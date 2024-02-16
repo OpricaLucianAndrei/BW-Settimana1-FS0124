@@ -160,6 +160,15 @@ input[type="radio"] {
     cursor: pointer;
 }
 
+.domanda label {
+    height: 70px;
+}
+
+.domanda:hover {
+    background-color: #00FFFF;
+    color: #0B113B;
+}
+
 #btnBenchmark {
     background-color: transparent;
     color: white;
@@ -333,4 +342,10 @@ footer p {
 }
 #footerFinal a:visited {
     color: white;
+}
+
+#epicode img:hover {
+    width: 180px;
+    box-shadow: 1px 1px 10px 5px #00FFFF, -1px -1px 10px 5px #00FFFF;
+    border-radius: 20px;
 }
