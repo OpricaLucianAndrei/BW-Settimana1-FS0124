@@ -126,8 +126,6 @@ function domandaEstratta() {
   const h2Question = document.getElementById("idTextQuestions");
   h2Question.innerHTML = `<h2>${questions[casual].question}</h2>`;
 
-
-  console.log(casual);
   textBenchmark.innerHTML = "";
   let answer = [];
   answer = questions[casual].incorrect_answers;
@@ -140,6 +138,7 @@ function domandaEstratta() {
     textBenchmark.innerHTML += `<div class='domanda'>
       <input type='radio' value='${element}' name='family' id='${element}'></input>
         <label for='${element}'>${element}</label></div>`;
+        document.getElementById('questionIndex').innerText=risposteDate.length;
   });
  
 }
@@ -149,6 +148,7 @@ function invio(radioButton) {
 }
 
 function eventoRadio() {
+  let casual=risposteDate[risposteDate.length-1].id;
   const radioButtons = document.querySelectorAll('input[name="family"]');
   for (const radioButton of radioButtons) {
     radioButton.addEventListener("change", function () {
@@ -162,7 +162,7 @@ function eventoRadio() {
         updateChart(myChart, counter);
       }, intervalDuration);
 
-      if (radioButton.value === questions[risposteDate.length-1].correct_answer) {
+      if (radioButton.value === questions[casual].correct_answer) {
         invio(true);
       } else {
         invio(false);
@@ -199,7 +199,7 @@ function tempo() {
     }
 
     eventoRadio();
-  }, 1000);
+  }, 30000);
 }
 
 // FUNZIONE PER IL TIMER CHE GIRA IN SENSO ANTI ORARIO
@@ -243,7 +243,7 @@ function drawPieChart(value, maxValue) {
 
 function updateChart(chart, counter) {
   if (counter <= 0) {
-    // Modifica la condizione per controllare se il contatore è <= 0
+    // Modifica la condizione per controllare se il contatore Ã¨ <= 0
     clearInterval(timerInterval); // Ferma l'intervallo quando il timer raggiunge 0 secondi
     counter = 30; // Reimposta il contatore a 0
     timerInterval = setInterval(() => {

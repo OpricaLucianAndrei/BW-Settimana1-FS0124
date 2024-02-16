@@ -1,4 +1,5 @@
 const risultatiString = localStorage.getItem("risposte");
+console.log(risultatiString);
 const risultatiArray = risultatiString.split(","); // Supponendo che i valori siano separati da virgole
 const risultati = risultatiArray.map(val => val === "true");
 console.log(risultati);
