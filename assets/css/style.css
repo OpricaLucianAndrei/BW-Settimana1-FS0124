@@ -230,7 +230,7 @@ footer p {
 
 #graph {
     margin: 15px auto;
-    padding-left: 30px;
+    padding-left: 27px;
   }
 
 #correctAnswers h2, #wrongAnswers h2 {
@@ -239,7 +239,7 @@ footer p {
 }
 
 #correctPercentage, #wrongPercentage {
-    font-size: 5em;
+    font-size: 4.8em;
     font-weight: bold;
 }
 
