@@ -1,8 +1,8 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   history.pushState(null, document.title, location.href);
 });
 
-window.addEventListener('popstate', function(event) {
+window.addEventListener('popstate', function (event) {
   history.pushState(null, document.title, location.href);
 });
 
@@ -33,11 +33,11 @@ function btnStart() {
 
 
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   history.pushState(null, document.title, location.href);
 });
 
-window.addEventListener('popstate', function(event) {
+window.addEventListener('popstate', function (event) {
   history.pushState(null, document.title, location.href);
 });
 

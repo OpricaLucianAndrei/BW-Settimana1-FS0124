@@ -92,33 +92,32 @@ form {
 
 /*-------BENCHMARK-------------*/
 
-#mainBenchmark{
+#mainBenchmark {
     text-align: center;
     padding: 50px 0;
-    margin-bottom: 45px; 
+    margin-bottom: 45px;
 }
+
 .c-countdown-wrapper {
     width: 120px;
-    height: 120px; 
-    display: inline-block;position: absolute; 
+    height: 120px;
+    display: inline-block;
+    position: absolute;
     right: 70px;
-    top: 70px; 
-
+    top: 70px;
 }
 
 #testoTimer {
     text-align: center;
     font-size: 0.4em;
-    position: absolute; 
+    position: absolute;
     right: 103px;
-    top: 108px; 
-
+    top: 108px;
 }
 
 #counterHtml {
     font-size: 2.4em;
 }
-
 
 #idTextQuestions {
     font-family: 'Outfit', sans-serif;
@@ -133,7 +132,6 @@ form {
     margin: 0 auto;
     width: 100%;
     margin-bottom: 30px;
-    
 }
 
 .domanda {
@@ -151,7 +149,8 @@ input[type="radio"] {
     display: none;
 }
 
-.domanda label, .html {
+.domanda label,
+.html {
     position: absolute;
     top: 50%;
     left: 0;
@@ -173,13 +172,11 @@ input[type="radio"] {
     background-color: transparent;
     color: white;
     width: 200px;
-    height: 60px;   
+    height: 60px;
 }
 
-
-
 footer {
-    text-align: center;      
+    text-align: center;
 }
 
 footer p {
@@ -205,7 +202,6 @@ footer p {
     font-size: 2em;
     margin-bottom: 15px;
 }
-
 
 #resultsSection {
     width: 100%;
@@ -259,8 +255,8 @@ footer p {
     font-weight: bold;
     font-size: 1.3em;
 }
- 
- 
+
+
 /* AGGIUNTA DEL CSS A PAGINA 4 RELATIVA AI FEEDBACK!!!  */
 
 #mainFeedback {
@@ -287,9 +283,8 @@ footer p {
 
 .star.active,
 .star:hover {
-  color: #00ffff;
+    color: #00ffff;
 }
-
 
 #comment {
     background-color: transparent;
@@ -302,14 +297,14 @@ footer p {
     border-bottom: 2px solid #c2138e;
 }
 
-#containerComment{
+#containerComment {
     margin-top: 10px;
     padding: 15px;
     display: inline-block;
 }
 
 /* INSERIRE BTN IN JS RICHIAMANDO L'ID btnFeedback */
-#btnFeedback {  
+#btnFeedback {
     width: 220px;
     height: 67px;
     margin-top: 30px;
@@ -327,7 +322,6 @@ footer p {
     left: 0;
     right: 0;
     transform: translateY(-50%);
-
 }
 
 #footerFinal {
@@ -337,9 +331,11 @@ footer p {
     right: 0;
     transform: translateY(-10%);
 }
+
 #footerFinal a {
     color: white;
 }
+
 #footerFinal a:visited {
     color: white;
 }

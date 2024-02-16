@@ -98,7 +98,7 @@ let timer;
 const risposteDate = [];
 
 
-window.addEventListener('popstate', function(event) {
+window.addEventListener('popstate', function (event) {
   history.pushState(null, document.title, location.href);
 });
 
@@ -114,23 +114,23 @@ window.addEventListener("load", function inizio() {
 
 
 function casuale() {
-  const ran = Math.floor( Math.random() * (questions.length));
-  let j=true;
-  for (const key of risposteDate ) {
-    if (key.id===ran) {
-      j=false;
+  const ran = Math.floor(Math.random() * (questions.length));
+  let j = true;
+  for (const key of risposteDate) {
+    if (key.id === ran) {
+      j = false;
     }
   }
-if (j===false) {
-  casuale();
-}else if (j===true) {
-  risposteDate.push({ id: ran }); 
-}
+  if (j === false) {
+    casuale();
+  } else if (j === true) {
+    risposteDate.push({ id: ran });
+  }
 }
 
 function domandaEstratta() {
   casuale();
-  let casual=risposteDate[risposteDate.length-1].id;
+  let casual = risposteDate[risposteDate.length - 1].id;
 
   const h2Question = document.getElementById("idTextQuestions");
   h2Question.innerHTML = `<h2>${questions[casual].question}</h2>`;
@@ -140,16 +140,16 @@ function domandaEstratta() {
   answer = questions[casual].incorrect_answers;
   const ran = Math.floor(
     Math.random() *
-      (questions[casual].incorrect_answers.length + 1)
+    (questions[casual].incorrect_answers.length + 1)
   );
   answer.splice(ran, 0, questions[casual].correct_answer);
   answer.forEach((element) => {
     textBenchmark.innerHTML += `<div class='domanda'>
       <input type='radio' value='${element}' name='family' id='${element}'></input>
         <label for='${element}'>${element}</label></div>`;
-        document.getElementById('questionIndex').innerText=risposteDate.length;
+    document.getElementById('questionIndex').innerText = risposteDate.length;
   });
- 
+
 }
 
 function invio(radioButton) {
@@ -157,7 +157,7 @@ function invio(radioButton) {
 }
 
 function eventoRadio() {
-  let casual=risposteDate[risposteDate.length-1].id;
+  let casual = risposteDate[risposteDate.length - 1].id;
   const radioButtons = document.querySelectorAll('input[name="family"]');
   for (const radioButton of radioButtons) {
     radioButton.addEventListener("change", function () {
@@ -180,12 +180,13 @@ function eventoRadio() {
         fine();
       } else {
         domandaEstratta();
-        
+
         tempo();
       }
     });
   }
 }
+
 function fine() {
   const arr = risposteDate.map((element) => {
     return element.bool;
@@ -193,20 +194,20 @@ function fine() {
   localStorage.setItem("risposte", arr);
   window.location.href = "../../results.html";
 }
+
 function tempo() {
   eventoRadio();
   timer = setInterval(function () {
-  
-    if (risposteDate.length < questions.length ) {
+
+    if (risposteDate.length < questions.length) {
       invio(false);
-      domandaEstratta();  
+      domandaEstratta();
     } else {
       invio(false);
       clearInterval(timer);
       timer = null;
       fine();
     }
-
     eventoRadio();
   }, 30000);
 }

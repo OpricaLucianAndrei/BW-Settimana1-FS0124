@@ -5,14 +5,14 @@ const risultati = risultatiArray.map(val => val === "true");
 //console.log(risultati);
 
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     history.pushState(null, document.title, location.href);
-  });
-  
-  window.addEventListener('popstate', function(event) {
+});
+
+window.addEventListener('popstate', function (event) {
     history.pushState(null, document.title, location.href);
-  });
-  
+});
+
 
 let percentualeTrue;
 const testoCorretto = `Congratulations!`;
