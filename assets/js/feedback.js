@@ -17,7 +17,8 @@ stars.forEach((star, index) => {
 
     star.addEventListener("click", () => {
         selectStar(index);
-        console.log(index +1 );
+        console.log(index +1);
+        //console.log("ciao Cristo")
     });
 });
 

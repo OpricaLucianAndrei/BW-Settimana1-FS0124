@@ -1,36 +1,8 @@
 const risultatiString = localStorage.getItem("risposte");
-console.log(risultatiString);
+//console.log(risultatiString);
 const risultatiArray = risultatiString.split(","); // Supponendo che i valori siano separati da virgole
 const risultati = risultatiArray.map(val => val === "true");
-console.log(risultati);
-//let ctx = document.getElementById("myChart").getContext('2d');
-//const myChart = new Chart(ctx, {
-//  type: 'doughnut',
-// options: {
-//    cutout: 140,
-//    plugins: {
-//      legend: true,
-//      textInside: {
-//        text: 'congratulazioni',
-//        color: 'white',
-//        fontSize: 3
-//      } 
-//    }
-//  },
-//  data: {
-//    
-//    datasets: [{
-//      backgroundColor: [
-//        "#C2128D",
-//        "#00FFFF"
-//      ],
-//    borderRadius: ["50%"],
-//      data: [60, 40]
-//    }]
-//  }
-//}
-//);
-
+//console.log(risultati);
 
 
 window.addEventListener('load', function() {
@@ -56,14 +28,6 @@ const data = {
     }]
 }
 
-window.addEventListener('load', function() {
-    history.pushState(null, document.title, location.href);
-  });
-  
-  window.addEventListener('popstate', function(event) {
-    history.pushState(null, document.title, location.href);
-  });
-  
 function calcolaPercentuali(risultati) {
     if (Array.isArray(risultati)) {
         const conteggioTrue = risultati.filter(val => val === true).length;
