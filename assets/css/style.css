@@ -183,24 +183,12 @@ footer p {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*-------------------------------*/
 /*RESULTS*/
 
 #mainResults {
     text-align: center;
     font-family: 'Outfit', sans-serif;
-
 }
 
 #mainResults h1 {
@@ -212,45 +200,55 @@ footer p {
 
 #resultsSection {
     width: 100%;
+    height: 40%;
+    margin-bottom: 30px;
 }
 
-#correctAnswers, #graph, #wrongAnswers {
+#correctAnswers,
+#graph,
+#wrongAnswers {
     display: inline-block;
     margin: 0 auto;
-    width: 30%; 
+    width: 30%;
 }
 
-#correctAnswers{
+#correctAnswers {
     text-align: left;
 }
 
-#wrongAnswers{
+#wrongAnswers {
     text-align: right;
 }
 
 #graph {
+    text-align: center;
     margin: 15px auto;
-    padding-left: 27px;
-  }
-
-#correctAnswers h2, #wrongAnswers h2 {
-    font-weight: 400;
-    font-size: 2em;
 }
 
-#correctPercentage, #wrongPercentage {
-    font-size: 4.8em;
+#correctAnswers h2,
+#wrongAnswers h2 {
+    font-weight: 400;
+    font-size: 2em;
+    margin-bottom: 0px;
+}
+
+#correctPercentage,
+#wrongPercentage {
+    font-size: 3em;
     font-weight: bold;
+    margin-bottom: 0;
+
 }
 
 #btnRate {
-    background-color: transparent;
-    color: white;
-    width: 200px;
-    height: 60px;
-    border: 2px solid;
-    box-shadow: 1px 1px 15px 5px #3f2570, -1px -1px 15px 5px #3f2570;
-
+    width: 220px;
+    height: 67px;
+    cursor: pointer;
+    background-color: #00ffff;
+    box-shadow: 2px 2px 15px 5px #00FFFF, -2px -2px 15px 5px #00FFFF;
+    border: 1px solid #00FFFF;
+    font-weight: bold;
+    font-size: 1.3em;
 }
  
  
@@ -276,8 +274,6 @@ footer p {
     text-align: left;
     font-size: 60px;
     color: #0B113B;
-                            /* color: #03ffff; COLORE DA UTILIZZARE QUANDO PASSI IL CURSORE SULLE star IN JS 
-                                                transition: color 0.3s ease; */
 }
 
 .star.active,
@@ -297,7 +293,7 @@ footer p {
     border-bottom: 2px solid #c2138e;
 }
 
-#buttonContainerFeedback {
+#containerComment{
     margin-top: 10px;
     padding: 15px;
     display: inline-block;

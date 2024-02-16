@@ -1,3 +1,9 @@
+/* 
+  passo 1= di principio ci basiamo sulla lunghezza del arrey delle risposte, se la risposta non è stata data il programma non può funzionare
+  passo 2= 
+*/
+
+
 const questions = [
   {
     category: "Science: Computers",
@@ -97,11 +103,20 @@ const questions = [
 let timer;
 const risposteDate = [];
 
+
+window.addEventListener('popstate', function(event) {
+  history.pushState(null, document.title, location.href);
+});
+
+
+
 window.addEventListener("load", function inizio() {
+  history.pushState(null, document.title, location.href);
   domandaEstratta();
-  
   tempo();
 });
+
+
 
 
 function casuale() {
