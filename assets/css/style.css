@@ -165,7 +165,7 @@ input[type="radio"] {
 }
 
 .domanda:hover {
-    background-color: #00FFFF;
+    background-color: #C2128D;
     color: #0B113B;
 }
 
@@ -254,7 +254,7 @@ footer p {
     height: 67px;
     cursor: pointer;
     background-color: #00ffff;
-    box-shadow: 2px 2px 15px 5px #00FFFF, -2px -2px 15px 5px #00FFFF;
+    box-shadow: 2px 2px 15px 5px #00FFFF, -2px -2px 15px 5px #C2128D;
     border: 1px solid #00FFFF;
     font-weight: bold;
     font-size: 1.3em;
