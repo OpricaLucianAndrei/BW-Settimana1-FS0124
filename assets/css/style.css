@@ -313,38 +313,6 @@ footer p {
 /* CHIUSURA CSS PAGINA 4  */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #thanksgiving {
     text-align: center;
     color: #00ffff;
@@ -355,4 +323,18 @@ footer p {
     right: 0;
     transform: translateY(-50%);
 
+}
+
+#footerFinal {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    right: 0;
+    transform: translateY(-10%);
+}
+#footerFinal a {
+    color: white;
+}
+#footerFinal a:visited {
+    color: white;
 }
